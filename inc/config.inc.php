@@ -1,0 +1,42 @@
+<?php
+     
+$aConfig['common']['dev'] = array(
+                            'siteUrl' => 'http://'.$_SERVER["HTTP_HOST"],
+                            'rootDir' => 'D:/personal/admin',
+                            'language'=>'en',
+                            'homeModule'=>'dashboard',
+                            'homeAction'=>'home',
+                            'loginModule'=>'dashboard',
+                            'loginAction'=>'home',
+                            'dbHost'=>'localhost',
+                            'dbUser'=>'root',
+                            'dbPassword'=>'',
+                            'dbName'=>'rightersgroup',
+                            'nPagerLength'=>'',
+                            'nPerPageRecords'=>'',
+                            'sSessionName'=>'userSession',
+                            'routerClassName' => 'routers',
+                            'dtDateTime' => "Y-m-d H:i:s",
+                            'checkSlug'=>false,
+                            'siteTitle'=>"Righter's",
+                          );
+// $aConfig['common']['prod'] = array(
+//                             'siteUrl' => 'http://'.$_SERVER["HTTP_HOST"],
+//                             'rootDir' => '/home2/righters/public_html/righters_staging/rightersgroup-maildb',
+//                             'language'=>'en',
+//                             'homeModule'=>'users',
+//                             'homeAction'=>'addedituser',
+//                             'loginModule'=>'',
+//                             'loginAction'=>'',
+//                             'dbHost'=>'localhost',
+//                             'dbUser'=>'rightersdev_staging',
+//                             'dbPassword'=>'),BHC*91[74N',
+//                             'dbName'=>'rightersdev_staging',
+//                             'nPagerLength'=>'',
+//                             'nPerPageRecords'=>'',
+//                             'sSessionName'=>'userSession',
+//                             'routerClassName' => 'routers',
+//                             'dtDateTime' => "Y-m-d H:i:s",
+//                             'siteTitle'=>"Righter's",
+//                           );
+

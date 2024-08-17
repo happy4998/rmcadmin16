@@ -7,7 +7,7 @@
   */
   ob_start();
   
-  $sAppName = "rightersgroup";
+  $sAppName = "adminRmcSchoolNo16";
   $sEnvironment = "dev";
   require '../index.php';
 

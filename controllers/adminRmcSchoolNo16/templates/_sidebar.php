@@ -16,7 +16,7 @@
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-image" aria-hidden="true"></i> Manage Sliders</a>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-sliders" aria-hidden="true"></i> Manage Sliders</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
                                     <li><a href="<?php echo getConfig('siteUrl').'/dashboard/sliders'?>">Slider</a>
@@ -32,6 +32,16 @@
                                     <li><a href="<?php echo getConfig('siteUrl').'/dashboard/event'?>">All Events</a>
                                     </li>
                                     <li><a href="<?php echo getConfig('siteUrl').'/dashboard/eventadd'?>">Create New Events</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-image" aria-hidden="true"></i> Gallery</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/gallery'?>">All Gallery</a>
+                                    </li>
+                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/galleryadd'?>">Create New Gallery Image</a>
                                     </li>
                                 </ul>
                             </div>

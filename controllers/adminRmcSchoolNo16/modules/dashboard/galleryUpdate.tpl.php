@@ -3,7 +3,7 @@
     <div class="sb2-2-2">
         <ul>
             <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-            <li class="active-bre"><a href="#"> Edit Event</a></li>
+            <li class="active-bre"><a href="#"> Edit Image</a></li>
             <!-- <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
         </ul>
     </div>
@@ -14,8 +14,8 @@
             <div class="col-md-12">
                 <div class="box-inn-sp admin-form">
                     <div class="inn-title">
-                        <h4>Edit Event</h4>
-                        <p>Here you can edit your event details, including title, description, URL, and thumbnail.</p>
+                        <h4>Edit Image</h4>
+                        <p>Here you can edit your Images.</p>
                     </div>
                     <div class="tab-inn">
                         <form method="POST" enctype="multipart/form-data">
@@ -27,24 +27,18 @@
                             </div>
                             <div class="row">
                                 <div class="col s12">
-                                    <span>Video Description</span>
+                                    <span>Image Description</span>
                                     <textarea id="description" name="description" class="materialize-textarea" required><?php echo htmlspecialchars($aGalleryData[0]['description']); ?></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s12">
-                                    <span>Video URL</span>
-                                    <input type="text" id="url" name="url" value="<?php echo htmlspecialchars($aGalleryData[0]['url']); ?>" class="validate" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">
-                                        <span>Video Thumbnail</span>
+                                        <span>Image Thumbnail</span>
                                         <input type="file" name="thumbnail" accept=".jpg, .jpeg, .png">
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" placeholder="Event Thumbnail" value="">
+                                        <input class="file-path validate" type="text" placeholder="Image" value="">
                                     </div>
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
      
 $aConfig['common']['dev'] = array(
                             'siteUrl' => 'http://'.$_SERVER["HTTP_HOST"],
-                            'rootDir' => 'D:/personal/admin',
+                            'rootDir' => 'D:/personal/pree/rmcadmin16',
                             'language'=>'en',
                             'homeModule'=>'dashboard',
                             'homeAction'=>'home',

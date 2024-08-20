@@ -50,34 +50,35 @@
 </div>
 
 <script>
-document.getElementById('sliderForm').addEventListener('submit', function(e) {
-    var fileInput = document.getElementById('thumbnail');
-    var file = fileInput.files[0];
+    document.getElementById('sliderForm').addEventListener('submit', async function(event) {
+        const fileInput = document.getElementById('thumbnail');
+        const file = fileInput.files[0];
 
-    if (file) {
-        var img = new Image();
-        img.src = URL.createObjectURL(file);
+        if (file) {
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
 
-        img.onload = function() {
-            var width = img.width;
-            var height = img.height;
+            // Prevent form submission until image dimensions are checked
+            event.preventDefault();
 
-            if (width !== 1366 || height !== 768) {
-                e.preventDefault();
-                alert('The image dimensions must be exactly 1366x768 pixels, Please use this to resize your image: https://www.reduceimages.com/');
-            }
+            img.onload = function() {
+                if (img.width !== 1366 || img.height !== 768) {
+                    alert('Thumbnail must be 1366x768 pixels, Please use this to resize your image: https://www.reduceimages.com/');
+                    URL.revokeObjectURL(img.src); // Clean up
+                } else {
+                    // If dimensions are correct, manually submit the form
+                    document.getElementById('eventForm').submit();
+                }
+            };
 
-            URL.revokeObjectURL(img.src); // Clean up
-        };
-
-        img.onerror = function() {
-            e.preventDefault();
-            alert('Failed to load image. Please select a valid image file.');
-            URL.revokeObjectURL(img.src); // Clean up
-        };
-    } else {
-        e.preventDefault();
-        alert('Please select an image file to upload.');
-    }
-});
+            img.onerror = function() {
+                alert('Failed to load image.');
+                URL.revokeObjectURL(img.src); // Clean up
+            };
+        } else {
+            alert('Please select a thumbnail image.');
+            event.preventDefault(); // Prevent form submission
+        }
+    });
 </script>
+

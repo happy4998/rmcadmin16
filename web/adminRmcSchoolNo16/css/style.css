@@ -136,6 +136,35 @@
     /* background: linear-gradient(to bottom, #ffffff, #c8ced2);
      */
 }
+.inn-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space between the button and the table */
+}
+
+.add-slider-btn .btn {
+    font-size: 16px;
+}
+
+.my-account {
+    text-align: right; /* Align content to the right */
+}
+
+.container-fluid.sb1 .row {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+}
+
+.container-fluid.sb1 .col-md-2 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.container-fluid.sb1 .col-md-2:last-child {
+    margin-left: auto; /* Push this column to the right */
+}
+
  .wed-logo{
      float: left;
      width: 20%;

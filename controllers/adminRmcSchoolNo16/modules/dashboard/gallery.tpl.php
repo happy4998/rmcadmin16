@@ -2,9 +2,9 @@
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
         <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-            <li class="active-bre"><a href="#">Gallery</a></li>
-            <!-- <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="active-bre"><a href="#">Manage Gallery</a></li>
+            <!-- <li class="page-back"><a href="#"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
         </ul>
     </div>
 
@@ -13,9 +13,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-inn-sp">
-                    <div class="inn-title">
-                        <h4>All Gallery</h4>
-                        <p>All about our school Gallery.</p>
+                    <div class="inn-title d-flex justify-content-between align-items-center">
+                        <div>
+                            <h4>All Gallery</h4>
+                            <p>All about our school Gallery.</p>
+                        </div>
+                        <!--== Add Image Button ==-->
+                        <div class="add-image-btn">
+                            <a href="<?php echo getConfig('siteUrl').'/dashboard/galleryadd'?>" class="btn btn-primary">Add Image</a>
+                        </div>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">

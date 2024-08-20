@@ -1,10 +1,4 @@
 <?php
- /**
-  * StepIn Solutions venture
-  * 
-  *
-  * @package Stepone 
-  */
   class school extends siCommon
   {
         // constructor

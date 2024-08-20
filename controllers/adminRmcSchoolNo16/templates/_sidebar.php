@@ -5,10 +5,10 @@
                 <!--== USER INFO ==-->
                 <div class="sb2-12">
                     <ul>
-                        <li><img src="images/placeholder.jpg" alt="">
+                        <li><img src="<?php echo getConfig('siteUrl', $sAppName) . '/images/user/school-logo.jpeg'?>" alt="">
                         </li>
                         <li>
-                            <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
+                            <h5>Rmc School No 16 <span> Rajkot</span></h5>
                         </li>
                         <li></li>
                     </ul>
@@ -16,35 +16,13 @@
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-sliders" aria-hidden="true"></i> Manage Sliders</a>
-                            <div class="collapsible-body left-sub-menu">
-                                <ul>
-                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/sliders'?>">Slider</a>
-                                    </li>
-                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/slideradd'?>">Create New Slider</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li><a href="<?php echo getConfig('siteUrl').'/dashboard/sliders'?>"><i class="fa fa-sliders" aria-hidden="true"></i>Manage Slider</a>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar" aria-hidden="true"></i> Events</a>
-                            <div class="collapsible-body left-sub-menu">
-                                <ul>
-                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/event'?>">All Events</a>
-                                    </li>
-                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/eventadd'?>">Create New Events</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li><a href="<?php echo getConfig('siteUrl').'/dashboard/event'?>"><i class="fa fa-calendar" aria-hidden="true"></i>Manage Events</a>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-image" aria-hidden="true"></i> Gallery</a>
-                            <div class="collapsible-body left-sub-menu">
-                                <ul>
-                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/gallery'?>">All Gallery</a>
-                                    </li>
-                                    <li><a href="<?php echo getConfig('siteUrl').'/dashboard/galleryadd'?>">Create New Gallery Image</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li><a href="<?php echo getConfig('siteUrl').'/dashboard/gallery'?>"><i class="fa fa-image" aria-hidden="true"></i>Manage Gallery</a>
+                        </li>
+                        <li><a href="<?php echo getConfig('siteUrl').'/dashboard/parentsreview'?>"><i class="fa fa-quote-right" aria-hidden="true"></i>Manage Parents Reviews</a>
                         </li>
                     </ul>
                 </div>

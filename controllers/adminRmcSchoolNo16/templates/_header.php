@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>EEducation Master Template</title>
+    <title>Admin Panel</title>
     <!-- META TAGS -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,35 +34,31 @@
 <body>
     <!--== MAIN CONTRAINER ==-->
     <div class="container-fluid sb1">
-        <div class="row">
-            <!--== LOGO ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
-                <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                <a href="index-2.html" class="logo"><img src="<?php echo getConfig('siteUrl',$sAppName).'/images/logo1.png'?>" alt="" />
-                </a>
-            </div>
-            <!--== SEARCH ==-->
-            <div class="col-md-6 col-sm-6 mob-hide">
-                <form class="app-search">
-                    <input type="text" placeholder="Search..." class="form-control">
-                    <a href="#"><i class="fa fa-search"></i></a>
-                </form>
-            </div>
-            <!--== MY ACCCOUNT ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <!-- Dropdown Trigger -->
-                <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="<?php echo getConfig('siteUrl',$sAppName).'/images/user/school-logo.jpeg'?>" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </a>
+    <div class="row">
+        <!--== LOGO ==-->
+        <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
+            <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
+            <a href="<?php echo getConfig('siteUrl').'/dashboard/sliders'; ?>" class="logo">
+                <img src="<?php echo getConfig('siteUrl', $sAppName) . '/images/user/LOGO-SAMITI.jpg'?>" alt="" />
+            </a>
+        </div>
+        <!--== MY ACCOUNT ==-->
+        <div class="col-md-2 col-sm-3 col-xs-6 my-account">
+            <!-- Dropdown Trigger -->
+            <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'>
+                <img src="<?php echo getConfig('siteUrl', $sAppName) . '/images/user/school-logo.jpeg'?>" alt="" />My Account 
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
 
-                <!-- Dropdown Structure -->
-                <ul id='top-menu' class='dropdown-content top-menu-sty'>
-                    <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
-                    </li>
-                </ul>
-            </div>
+            <!-- Dropdown Structure -->
+            <ul id='top-menu' class='dropdown-content top-menu-sty'>
+                <!-- <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
+                </li> -->
+                <li class="divider"></li>
+                <li><a href="<?php echo getConfig('siteUrl').'/users/logout'?>" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                </li>
+            </ul>
         </div>
     </div>
+</div>

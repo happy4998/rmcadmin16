@@ -2,9 +2,9 @@
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
         <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-            <li class="active-bre"><a href="#">Sliders</a></li>
-            <!-- <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="active-bre"><a href="#">Manage Sliders</a></li>
+            <!-- <li class="page-back"><a href="#"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
         </ul>
     </div>
 
@@ -13,10 +13,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-inn-sp">
-                    <div class="inn-title">
-                        <h4>All Sliders</h4>
-                        <p>All about our sliders.</p>
+                    <div class="inn-title d-flex justify-content-between align-items-center">
+                        <div>
+                            <h4>All Sliders</h4>
+                            <p>All about our sliders.</p>
+                        </div>
+                        <!--== Add Slider Button ==-->
+                        <div class="add-slider-btn">
+                            <a href="<?php echo getConfig('siteUrl').'/dashboard/slideradd'?>" class="btn btn-primary">Add Slider</a>
+                        </div>
                     </div>
+                    
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
                             <table class="table table-hover">

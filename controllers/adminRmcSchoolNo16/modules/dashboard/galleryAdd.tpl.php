@@ -2,9 +2,10 @@
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
         <ul>
-            <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="active-bre"><a href="<?php echo getConfig('siteUrl').'/dashboard/gallery'?>"> Manage Gallery</a></li>
             <li class="active-bre"><a href="#"> Add New Image</a></li>
-            <!-- <li class="page-back"><a href="index-2.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
+            <!-- <li class="page-back"><a href="#"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
         </ul>
     </div>
 
@@ -26,12 +27,12 @@
                                     <label for="title">Title</label>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="input-field col s12">
                                     <textarea id="description" name="description" class="materialize-textarea" required></textarea>
                                     <label for="description">Image Description</label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">

@@ -1,8 +1,8 @@
 <?php 
  
 class dashboardController {
-    public $aLayout = array('home'=>'main','event'=>'main','eventadd'=>'main','eventupdate'=>'main','sliders'=>'main','slideradd'=>'main','gallery'=>'main','galleryadd'=>'main','galleryupdate'=>'main');
-    public $aLoginRequired = array('home'=>false,'event'=>false,'eventadd'=>false,'eventupdate'=>false,'sliders'=>false,'slideradd'=>false,'gallery'=>false,'galleryadd'=>false,'galleryupdate'=>false);
+    public $aLayout = array('home'=>'main','event'=>'main','eventadd'=>'main','eventupdate'=>'main','sliders'=>'main','slideradd'=>'main','parentsreview'=>'main','parentsreviewadd'=>'main','gallery'=>'main','galleryadd'=>'main','galleryupdate'=>'main');
+    public $aLoginRequired = array('home'=>true,'event'=>true,'eventadd'=>true,'eventupdate'=>true,'sliders'=>true,'slideradd'=>true,'parentsreview'=>true,'parentsreviewadd'=>true,'gallery'=>true,'galleryadd'=>true,'galleryupdate'=>true);
     private $dbConfig=[];
     public function __construct() 
     {
@@ -196,7 +196,7 @@ class dashboardController {
         require('sliders.tpl.php');
     }    
 
-    public function callslideradd() {
+    public function callSlideradd() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $thumbnailPath = '';
             
@@ -238,6 +238,77 @@ class dashboardController {
     
         require('slidersAdd.tpl.php');
     }
+
+    public function callParentsReview() {
+        // Define initial conditions for existing reviews
+        $aReview = array('*');
+        $sCondition = "1"; // Adjust if you need specific conditions
+        
+        // Instantiate Lists object and retrieve existing reviews from the database
+        $oSchool = new school($this->dbConfig);
+        
+        // Handle the deletion
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+            $deleteId = intval($_POST['delete_id']);
+            $deleteQuery = "DELETE FROM parentsreview WHERE id=" . $deleteId;
+            $oSchool->executeQuery($deleteQuery);
+        
+            // Redirect to prevent form resubmission
+            header('Location: ' . getConfig('siteUrl') . '/dashboard/parentsreview');
+            exit();
+        }
+        
+        // Fetch review data
+        $aReviewData = $oSchool->getschool('parentsreview', $aReview, $sCondition);
+        
+        // Include the template for displaying reviews
+        require('parentsReview.tpl.php');
+    }    
+    
+    public function callParentsReviewAdd() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $thumbnailPath = '';
+            
+            // Handle file upload
+            if (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] == UPLOAD_ERR_OK) {
+                $fileTmpPath = $_FILES['thumbnail']['tmp_name'];
+                $fileName = $_FILES['thumbnail']['name'];
+                $fileNameCmps = explode(".", $fileName);
+                $fileExtension = strtolower(end($fileNameCmps));
+        
+                $allowedExtensions = array('jpg', 'jpeg', 'png');
+                if (in_array($fileExtension, $allowedExtensions)) {
+                    
+                    // Use getConfig to get the base URL or directory
+                    $uploadFileDir = getConfig('rootDir') . '/web/adminRmcSchoolNo16/images/parentsReview/';
+                    $dest_path = $uploadFileDir . $fileName;
+        
+                    if (move_uploaded_file($fileTmpPath, $dest_path)) {
+                        $thumbnailPath = getConfig('siteUrl') . '/images/parentsReview/' . $fileName; 
+                    }
+                }
+            }
+            
+            // Prepare data for insertion
+            $sTable = 'parentsreview'; // Ensure this is the correct table name for reviews
+            $aFields = ['name', 'url', 'description'];
+            $aData = [
+                [$_POST['name'], $thumbnailPath, $_POST['description']]
+            ];
+        
+            // Insert the data into the database
+            $oSchool = new school($this->dbConfig);
+            $oSchool->insertRecords($sTable, $aFields, $aData);
+        
+            // Redirect or show a success message
+            header('Location: ' . getConfig('siteUrl') . '/dashboard/parentsreview');
+            exit();
+        }
+        
+        // Include the template for adding a review
+        require('parentsReviewAdd.tpl.php');
+    }
+    
     
     public function callGallery() {
         // Define initial conditions for existing lists

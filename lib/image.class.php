@@ -273,13 +273,7 @@
 
             $this->upload($dstFile,$sPath);
 	}
-        /**
-         * createThumbs image
-         * @param type $sPathToImages
-         * @param type $sPathToThumbs
-         * @param type $nThumbWidth
-         * @author Jaimin Shelat <jaimin.stepin@gmail.com>
-         */
+       
         public function createThumbs($sThumbPath, $nThumbWidth, $newFilename )
         {
             $file = $this->aImage['image_file'];

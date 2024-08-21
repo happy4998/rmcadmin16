@@ -66,8 +66,8 @@ class dashboardController {
             $currentData = $aGalleryData[0];
             
             // Initialize variables
-            $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : $currentData['title'];
-            $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : $currentData['description'];
+            $title = isset($_POST['title']) ? str_replace("'", " ", htmlspecialchars($_POST['title'])) : $currentData['title'];
+            $description = isset($_POST['description']) ? str_replace("'", " ", htmlspecialchars($_POST['description'])) : $currentData['description'];
             $url = isset($_POST['url']) ? htmlspecialchars($_POST['url']) : $currentData['url'];
             $status = isset($_POST['status']) ? intval($_POST['status']) : $currentData['activated'];
             $thumbnailPath = $currentData['thumbnail'];
@@ -126,8 +126,8 @@ class dashboardController {
     public function callEventAdd() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Retrieve form data
-            $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
-            $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : '';
+            $title = isset($_POST['title']) ? str_replace("'", " ", htmlspecialchars($_POST['title'])) : '';
+            $description = isset($_POST['description']) ? str_replace("'", " ", htmlspecialchars($_POST['description'])) : '';
             $url = isset($_POST['url']) ? htmlspecialchars($_POST['url']) : '';
             $thumbnailPath = '';
     
@@ -290,12 +290,17 @@ class dashboardController {
             }
             
             // Prepare data for insertion
-            $sTable = 'parentsreview'; // Ensure this is the correct table name for reviews
-            $aFields = ['name', 'url', 'description'];
+            $sTable = "parentsreview"; // Ensure this is the correct table name for reviews
+            $aFields = ["name", "url", "description"];
+
+            $url = $thumbnailPath;
+            $name = str_replace("'", "", $_POST["name"]);
+            $description = str_replace("'", "", $_POST["description"]);
+
             $aData = [
-                [$_POST['name'], $thumbnailPath, $_POST['description']]
+                [$name, $url, $description]
             ];
-        
+        // print_r("'".$_POST['name']."'");
             // Insert the data into the database
             $oSchool = new school($this->dbConfig);
             $oSchool->insertRecords($sTable, $aFields, $aData);
@@ -348,8 +353,8 @@ class dashboardController {
             $currentData = $aGalleryData[0];
             
             // Initialize variables
-            $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : $currentData['title'];
-            $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : $currentData['description'];
+            $title = isset($_POST['title']) ? str_replace("'", " ", htmlspecialchars($_POST['title'])) : $currentData['title'];
+            // $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : $currentData['description'];
             // $url = isset($_POST['url']) ? htmlspecialchars($_POST['url']) : $currentData['url'];
             $status = isset($_POST['status']) ? intval($_POST['status']) : $currentData['activated'];
             $thumbnailPath = $currentData['thumbnail'];
@@ -379,9 +384,9 @@ class dashboardController {
             if ($title !== $currentData['title']) {
                 $updateFields[] = "title='" . $title . "'";
             }
-            if ($description !== $currentData['description']) {
-                $updateFields[] = "description='" . $description . "'";
-            }
+            // if ($description !== $currentData['description']) {
+            //     $updateFields[] = "description='" . $description . "'";
+            // }
             if ($thumbnailPath !== $currentData['thumbnail']) {
                 $updateFields[] = "thumbnail='" . $thumbnailPath . "'";
             }
@@ -405,9 +410,9 @@ class dashboardController {
     public function callGalleryAdd() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Retrieve form data
-            $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : '';
-            $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : '';
-            $url = isset($_POST['url']) ? htmlspecialchars($_POST['url']) : '';
+            $title = isset($_POST['title']) ? str_replace("'", " ", htmlspecialchars($_POST['title'])) : '';
+            // $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : '';
+            // $url = isset($_POST['url']) ? htmlspecialchars($_POST['url']) : '';
             $thumbnailPath = '';
     
             // Handle file upload
@@ -432,9 +437,9 @@ class dashboardController {
             
             // Prepare data for insertion
             $sTable = 'gallery';
-            $aFields = ['title', 'type', 'description', 'thumbnail', 'activated'];
+            $aFields = ['title', 'type', 'thumbnail', 'activated'];
             $aData = [
-                [$title, 'img', $description, "".$thumbnailPath."", 1] // 1 for active
+                [$title, 'img', "".$thumbnailPath."", 1] // 1 for active
             ];
     
             // Insert the data into the database

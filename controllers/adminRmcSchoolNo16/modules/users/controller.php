@@ -29,7 +29,7 @@ class usersController
         }
         public function calllogin()
         {
-            print_r($_POST);
+            // print_r($_POST);
             global $oSession;
             $oUser = new users();
             $sMessage =__('User_logged_in_successfully');
@@ -66,7 +66,7 @@ class usersController
                                     ),
 
                             );
-                            print_r($aFields);
+                            // print_r($aFields);
                 $bIsValid = $oUser->validateData($aFields);
                 if($bIsValid)
                 {

@@ -25,12 +25,12 @@
                                     <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($aGalleryData[0]['title']); ?>" class="validate" required>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col s12">
                                     <span>Image Description</span>
                                     <textarea id="description" name="description" class="materialize-textarea" required><?php echo htmlspecialchars($aGalleryData[0]['description']); ?></textarea>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">

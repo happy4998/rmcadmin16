@@ -31,7 +31,6 @@
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Title</th>
-                                        <th>Description</th>
                                         <th>Status</th>
                                         <th>Edit</th>
                                         <th>Delete</th> <!-- Added Delete Column -->
@@ -45,9 +44,8 @@
                                                 <td>".($index + 1)."</td>
                                                 <td><span class='list-img'><img src='{$event['thumbnail']}' alt='Event Thumbnail'></span></td>
                                                 <td>{$event['title']}</td>
-                                                <td>{$event['description']}</td>
                                                 <td><span class='label label-".($status == 'Active' ? 'success' : 'danger')."'>{$status}</span></td>
-                                                <td><a href='".getConfig('siteUrl')."/dashboard/eventupdate?id={$event['id']}' class='ad-st-view'>Edit</a></td>
+                                                <td><a href='".getConfig('siteUrl')."/dashboard/galleryupdate?id={$event['id']}' class='ad-st-view'>Edit</a></td>
                                                 <td>
                                                     <form method='POST' action='' onsubmit=\"return confirm('Are you sure you want to delete this event?');\">
                                                         <input type='hidden' name='delete_id' value='{$event['id']}'>

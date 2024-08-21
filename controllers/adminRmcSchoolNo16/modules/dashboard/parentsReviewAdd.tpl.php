@@ -76,7 +76,7 @@
                     URL.revokeObjectURL(img.src); // Clean up
                 } else {
                     // If dimensions are correct, manually submit the form
-                    document.getElementById('eventForm').submit();
+                    document.getElementById('reviewForm').submit();
                 }
             };
 

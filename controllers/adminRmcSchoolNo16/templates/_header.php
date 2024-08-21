@@ -36,13 +36,13 @@
     <div class="container-fluid sb1">
     <div class="row">
         <!--== LOGO ==-->
-        <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
+        <!-- <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
             <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
             <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
             <a href="<?php echo getConfig('siteUrl').'/dashboard/sliders'; ?>" class="logo">
                 <img src="<?php echo getConfig('siteUrl', $sAppName) . '/images/user/LOGO-SAMITI.jpg'?>" alt="" />
             </a>
-        </div>
+        </div> -->
         <!--== MY ACCOUNT ==-->
         <div class="col-md-2 col-sm-3 col-xs-6 my-account">
             <!-- Dropdown Trigger -->

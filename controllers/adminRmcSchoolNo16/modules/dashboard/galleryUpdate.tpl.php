@@ -4,7 +4,6 @@
         <ul>
             <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
             <li class="active-bre"><a href="#"> Edit Image</a></li>
-            <!-- <li class="page-back"><a href="#"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></li> -->
         </ul>
     </div>
 
@@ -25,12 +24,20 @@
                                     <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($aGalleryData[0]['title']); ?>" class="validate" required>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col s12">
-                                    <span>Image Description</span>
-                                    <textarea id="description" name="description" class="materialize-textarea" required><?php echo htmlspecialchars($aGalleryData[0]['description']); ?></textarea>
+                                    <span>Category</span>
+                                    <select id="category" name="category" class="browser-default" required>
+                                        <option value="" disabled>Select a category</option>
+                                        <?php foreach ($aCategoryData as $category): ?>
+                                            <option value="<?php echo htmlspecialchars($category['id']); ?>"
+                                                <?php echo ($category['id'] == $aGalleryData[0]['id_category']) ? 'selected' : ''; ?>>
+                                                <?php echo htmlspecialchars($category['category_name']); ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">
@@ -38,7 +45,7 @@
                                         <input type="file" name="thumbnail" accept=".jpg, .jpeg, .png">
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" placeholder="Image" value="">
+                                        <input class="file-path validate" type="text" placeholder="Image">
                                     </div>
                                 </div>
                             </div>
@@ -53,9 +60,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <!-- Button Container -->
                                     <div class="button-container">
-                                        <i class="waves-effect waves-light btn-large waves-input-wrapper"><input type="submit" class="waves-button-input" value="Update"></i>
+                                        <i class="waves-effect waves-light btn-large waves-input-wrapper">
+                                            <input type="submit" class="waves-button-input" value="Update">
+                                        </i>
                                     </div>
                                 </div>
                             </div>
@@ -73,10 +81,5 @@
     display: flex;
     gap: 10px;
     align-items: center;
-}
-
-.small-btn {
-    font-size: 0.75rem; /* Smaller font size */
-    padding: 0.5rem 1rem; /* Smaller padding */
 }
 </style>

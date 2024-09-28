@@ -28,10 +28,10 @@
                             ".implode(',' , $aFields)."
                         FROM
                                     ".$sJobTableName."
-                        LEFT JOIN
+                        INNER JOIN
                                     ".$sJobThreadTableName."
                         ON
-                                    $sJobTableName.id = $sJobThreadTableName.id_jobs
+                                    $sJobTableName.id = $sJobThreadTableName.id_category
                         WHERE".
                                     $sCondition;
             $sQueryHandler = $this->executeQuery($sQuery);

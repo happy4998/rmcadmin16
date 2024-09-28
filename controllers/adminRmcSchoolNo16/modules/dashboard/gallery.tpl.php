@@ -31,6 +31,7 @@
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Title</th>
+                                        <th>Category</th>
                                         <th>Status</th>
                                         <th>Edit</th>
                                         <th>Delete</th> <!-- Added Delete Column -->
@@ -44,6 +45,7 @@
                                                 <td>".($index + 1)."</td>
                                                 <td><span class='list-img'><img src='{$event['thumbnail']}' alt='Event Thumbnail'></span></td>
                                                 <td>{$event['title']}</td>
+                                                <td>{$event['category_name']}</td>
                                                 <td><span class='label label-".($status == 'Active' ? 'success' : 'danger')."'>{$status}</span></td>
                                                 <td><a href='".getConfig('siteUrl')."/dashboard/galleryupdate?id={$event['id']}' class='ad-st-view'>Edit</a></td>
                                                 <td>

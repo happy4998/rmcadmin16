@@ -20,6 +20,8 @@
                         </li>
                         <li><a href="<?php echo getConfig('siteUrl').'/dashboard/event'?>"><i class="fa fa-calendar" aria-hidden="true"></i>Manage Events</a>
                         </li>
+                        <li><a href="<?php echo getConfig('siteUrl').'/dashboard/category'?>"><i class="fa fa-paint-brush" aria-hidden="true"></i>Manage Categories</a>
+                        </li>
                         <li><a href="<?php echo getConfig('siteUrl').'/dashboard/gallery'?>"><i class="fa fa-image" aria-hidden="true"></i>Manage Gallery</a>
                         </li>
                         <li><a href="<?php echo getConfig('siteUrl').'/dashboard/parentsreview'?>"><i class="fa fa-quote-right" aria-hidden="true"></i>Manage Parents Reviews</a>

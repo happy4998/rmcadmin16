@@ -31,7 +31,7 @@
                                     <label for="description">Description</label>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">
                                         <span>Upload Image</span>
@@ -41,7 +41,7 @@
                                         <input class="file-path validate" type="text" placeholder="Image">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="waves-effect waves-light btn-large waves-input-wrapper">
@@ -58,7 +58,7 @@
 </div>
 
 
-<script>
+<!-- <script>
     document.getElementById('reviewForm').addEventListener('submit', async function(event) {
         const fileInput = document.getElementById('thumbnail');
         const file = fileInput.files[0];
@@ -89,4 +89,4 @@
             event.preventDefault(); // Prevent form submission
         }
     });
-</script>
+</script> -->

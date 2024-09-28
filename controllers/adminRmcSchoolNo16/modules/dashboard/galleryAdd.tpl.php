@@ -27,12 +27,18 @@
                                     <label for="title">Title</label>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="description" name="description" class="materialize-textarea" required></textarea>
-                                    <label for="description">Image Description</label>
+                                    <select id="category" name="category" required>
+                                        <option value="" disabled selected>Select a category</option>
+                                        <?php foreach ($aCatagoryData as $category): ?>
+                                            <option value="<?php echo htmlspecialchars($category['category_name']); ?>">
+                                                <?php echo htmlspecialchars($category['category_name']); ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="row">
                                 <div class="file-field input-field col s12">
                                     <div class="btn admin-upload-btn">
